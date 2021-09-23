@@ -2,6 +2,8 @@
 
 - This application contains the Public Chat room feature which will enable only for the authenticated user.
 
+- Implementation of Arithmetic Captcha on Sign Up Page.
+
 - It is developed using docker, redis layer, Django channels and websockets
 
 - In this application, the user can edit their details, the authenticated user can see the list of all users
