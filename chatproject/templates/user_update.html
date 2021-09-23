@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}User Update Page{% endblock title %}
+
+{% block content %}
+
+<h2 class="text-center my-2">Update User Details</h2>
+{% include 'message.html' %}
+
+<div class=" my-5 container card border-primary" style="max-width: 500px;">
+    <div class="card-body">
+
+        <form method="POST">
+            {% csrf_token %}
+            
+            {% include 'form_table.html' with form=form %}
+
+            <div class="d-grid gap-2 mt-5">
+            <button type="submit" class="btn btn-outline-success mx-auto">Save</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="d-grid">
+<a href="{% url 'home' %}" class="btn btn-outline-danger mx-auto mb-3 mt-0" role="button">Cancel</a>
+</div>
+{% endblock content %}

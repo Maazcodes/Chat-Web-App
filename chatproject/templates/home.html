@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %} Home | Chat Web Application {% endblock title %}
+
+{% block content %}
+
+<h2 class="text-center my-3">Chat Web Application</h2>
+
+{% include 'message.html' %}
+
+<a href="{% url 'room' 'hello' %}" type="submit" class=" text-center my-5 btn btn-success" style="margin-left: 550px; padding: 10px 80px 10px 80px" role="button">Chat</a>
+
+{% if user.is_authenticated %}
+<div class="container mt-2">
+    <h4>Logged in user details:</h4><br>
+    <strong>Username:</strong><div>{{user.username}}</div><br>
+    <strong>Email:</strong><div>{{user.email}}</div>
+
+    <a href="{% url 'user_update' user.id %}" role="button" class="btn btn-primary mt-5">Edit</a> <br>
+    <a href="{% url 'users' %}" role="button" class="btn btn-primary mt-5">See All Users</a>
+</div>
+{% else %}
+
+<div class="container text-center mt-5" >
+    <h4 class="text-danger" >Please Register or Login to chat</h4>
+</div>
+
+{% endif %}
+
+{% endblock content %}

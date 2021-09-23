@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %} List of Users | Chat Web Application {% endblock title %}
+
+{% block content %}
+
+{% if users %}
+<div class="container mb-5"  style="max-width: 350px;">
+    <h3 class="text-center my-5">List of Users</h3>
+    {% for user in users %}
+    <div class="card border-primary mt-3">
+        <div class="card-body text-success">
+            <div class="card-text">
+                <strong>Username: </strong><p>{{user.username}}</p>
+                <strong>Email: </strong><p>{{user.email}}</p>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% else %}
+
+<div class="container text-center mt-5" >
+    <h4 class="text-success" >There are no users</h4>
+</div>
+
+{% endif %}
+{% endblock content %}

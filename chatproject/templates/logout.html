@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block title %} Logout |Chat Web Application {% endblock title %}
+
+{% block content %}
+
+<h3 class="text-center mt-5">You have successfully logged out</h3>
+
+<a href="{% url 'login' %}" class="btn btn-outline-primary mx-3" type="submit" role="button">Back to Login</a>
+{% endblock content %}

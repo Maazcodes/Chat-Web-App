@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %} Login |Chat Web Application {% endblock title %}
+
+{% block content %}
+
+<div class=" mt-5 container card" style="max-width: 400px;">
+    <div class="card-body">
+        <form method="POST">
+            {% csrf_token %}
+            {% load crispy_forms_tags %} 
+            <fieldset class="form-group">
+                <legend class="border-bottom">Login</legend>
+                {{form|crispy}}
+            </fieldset>
+            <button type="submit" class="btn btn-outline-primary mt-3 container-fluid">Login</button>
+        </form>
+    
+        <small class="mt-5">Need to register an account? &nbsp; &nbsp;<a href="{% url 'signup' %}">Sign up</a></small>
+    </div>
+</div>
+
+{% endblock content %}
